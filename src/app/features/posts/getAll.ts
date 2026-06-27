@@ -33,6 +33,7 @@ export const Deletepost = actionClient
         id,
       },
     });
+    revalidatePath("/posts");
     redirect("/posts");
   });
 
@@ -58,6 +59,7 @@ export const createEdit = actionClient
             id: id,
           },
         });
+        revalidatePath("/posts");
       } else {
         await prisma.post.create({
           data: {

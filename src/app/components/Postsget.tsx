@@ -2,7 +2,7 @@ import { Pencil, Wand } from "lucide-react";
 import Link from "next/link";
 import { Allposts } from "../features/posts/getAll";
 import { Badge } from "@/components/ui/badge";
-
+export const revalidate = 3;
 const Postsget = async () => {
   const posts = await Allposts();
 
