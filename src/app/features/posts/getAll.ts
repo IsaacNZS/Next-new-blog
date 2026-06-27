@@ -68,8 +68,9 @@ export const createEdit = actionClient
             status,
           },
         });
+        revalidatePath("/posts");
       }
-      revalidatePath("/posts");
+
       return {
         success: true,
       };
