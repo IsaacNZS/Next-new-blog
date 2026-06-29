@@ -76,5 +76,6 @@ export const createEdit = actionClient
       };
     } catch (error) {
       console.log(error);
+      throw error;
     }
   });

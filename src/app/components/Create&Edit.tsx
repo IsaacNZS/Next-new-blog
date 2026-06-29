@@ -66,7 +66,10 @@ export function CreateEdit({ id }: Idprop) {
   const [open, setOpen] = useState(false);
   const { execute, isExecuting } = useAction(createEdit, {
     onSuccess() {
-      toast.success("Success");
+      toast.success("Success", {
+        position: "top-center",
+        richColors: true,
+      });
       setOpen(false);
       router.refresh();
     },
@@ -93,10 +96,6 @@ export function CreateEdit({ id }: Idprop) {
       description: data.description,
       status: data.status,
     });
-    toast.success("Success", {
-      position: "top-center",
-    });
-    router.push("/posts");
   }
 
   const getOld = async (id: string) => {
